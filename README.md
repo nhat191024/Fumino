@@ -1,1 +1,1 @@
-# chichi Project Discord bot using DiscordJS v14
+# Furuhashi Fumino Project Discord bot using DiscordJS v14
