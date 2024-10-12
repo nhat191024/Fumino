@@ -8,46 +8,24 @@ module.exports = {
             vi: 'xóa_tin_nhắn'
         })
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
-        .setDMPermission(false)
         .setDescription('delete messages by number in 1 channel or 1 user')
-        .setDescriptionLocalizations({
-            vi: 'xóa tin nhắn theo số lượng ở 1 kênh hoặc 1 người dùng',
-        })
         .addChannelOption(option =>
             option.setName('channel')
-                .setNameLocalizations({
-                    vi: 'kênh',
-                })
                 .setDescription('Channel you want to delete messages')
-                .setDescriptionLocalizations({
-                    vi: 'Kênh xóa tin nhắn',
-                })
                 .addChannelTypes(ChannelType.GuildText)
                 .setRequired(true)
         )
 
         .addIntegerOption(option =>
             option.setName('amount')
-                .setNameLocalizations({
-                    vi: 'số_lượng',
-                })
                 .setDescription('Number of messages to delete')
-                .setDescriptionLocalizations({
-                    vi: 'Số lượng tin nhắn sẽ xóa',
-                })
                 .setMinValue(1) 
                 .setMaxValue(100)
                 .setRequired(true)
         )
         .addUserOption(option =>
             option.setName('user')
-                .setNameLocalizations({
-                    vi: 'người_dùng',
-                })
                 .setDescription('user you want to delete messages')
-                .setDescriptionLocalizations({
-                    vi: 'người dùng bạn muốn xóa tin nhắn',
-                })
                 .setRequired(false)
         ),
     /**
