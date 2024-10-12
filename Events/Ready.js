@@ -1,5 +1,4 @@
 let dateNow = Date.now();
-const config = require('../Config/config.json')
 const { Events, Client } = require('discord.js');
 
 module.exports = {
