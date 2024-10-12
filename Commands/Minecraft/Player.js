@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, ChannelType, PermissionFlagsBits, Interaction } = require("discord.js");
-const { execute } = require("./StartServer");
+const { exec } = require('child_process');
 
 module.exports = {
     data: new SlashCommandBuilder()
