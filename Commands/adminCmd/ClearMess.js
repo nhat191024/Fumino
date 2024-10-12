@@ -20,7 +20,7 @@ module.exports = {
             option.setName('amount')
                 .setDescription('Number of messages to delete')
                 .setMinValue(1) 
-                .setMaxValue(100)
+                .setMaxValue(99)
                 .setRequired(true)
         )
         .addUserOption(option =>
