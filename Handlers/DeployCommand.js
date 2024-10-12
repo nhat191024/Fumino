@@ -1,5 +1,4 @@
 const { REST, Routes } = require('discord.js');
-const { token, fuminoId } = require('../Config/config.json');
 const fs = require('fs');
 const path = require('path');
 const cmds = [];
@@ -18,13 +17,13 @@ module.exports = (fumino) => {
         }
     }
 
-    const rest = new REST().setToken(token);
+    const rest = new REST().setToken(process.env.DISCORD_TOKEN);
 
     (async () => {
         try {
             console.log("[x] :: ".magenta + 'Now start deploy slash commands...'.brightYellow)
             const data = await rest.put(
-                Routes.applicationCommands(fuminoId),
+                Routes.applicationCommands(process.env.BOT_ID),
                 { body: cmds },
             );
             console.log("[x] :: ".magenta + `Successfully deploy ${cmds.length} slash commands after: `.brightGreen + `${Date.now() - dateNow}ms`.green);

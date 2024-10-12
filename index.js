@@ -1,6 +1,8 @@
 const {Client, GatewayIntentBits, Collection} = require('discord.js');
-const config = require('./Config/config.json');
 const colors = require("colors");
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const fumino = new Client({
     intents: [
@@ -8,7 +10,7 @@ const fumino = new Client({
         GatewayIntentBits.GuildMembers,
         GatewayIntentBits.GuildModeration,
         GatewayIntentBits.GuildEmojisAndStickers,
-        GatewayIntentBits.GuildWebhooks,
+        GatewayIntentBits.GuildWebhooks,  
         GatewayIntentBits.GuildInvites,
         GatewayIntentBits.GuildVoiceStates,
         GatewayIntentBits.GuildPresences,
@@ -47,4 +49,4 @@ async function requirehandlers(){
   }
   requirehandlers();
 
-fumino.login(config.token);
+fumino.login(process.env.DISCORD_TOKEN);
