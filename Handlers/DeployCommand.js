@@ -23,7 +23,7 @@ module.exports = (fumino) => {
         try {
             console.log("[x] :: ".magenta + 'Now start deploy slash commands...'.brightYellow)
             const data = await rest.put(
-                Routes.applicationCommands(process.env.BOT_ID),
+                Routes.applicationCommands(process.env.BOT_ID, process.env.SERVER_ID),
                 { body: cmds },
             );
             console.log("[x] :: ".magenta + `Successfully deploy ${cmds.length} slash commands after: `.brightGreen + `${Date.now() - dateNow}ms`.green);
