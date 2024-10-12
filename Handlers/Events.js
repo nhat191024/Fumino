@@ -4,7 +4,7 @@ const events = [];
 let dateNow = Date.now();
 
 module.exports = (fumino) => {
-    const eventsPath = path.join(__dirname, '../events');
+    const eventsPath = path.join(__dirname, '../Events');
     const eventsFile = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
     console.log("[x] :: ".magenta + "Now starting loading events...".brightYellow);
     for (const file of eventsFile) {
