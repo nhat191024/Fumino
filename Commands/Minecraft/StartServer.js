@@ -6,7 +6,7 @@ module.exports = {
         .setName('start')
         .setDescription('Start the Minecraft server'),
     async execute(interaction, client) {
-        exec('sudo systemctl start minecraft', (error, stdout, stderr) => {
+        exec('sudo systemctl start craftoria.service', (error, stdout, stderr) => {
             if (error) {
                 console.error(`Error starting server: ${error.message}`);
                 interaction.reply('Failed to start the server.');

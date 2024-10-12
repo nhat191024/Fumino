@@ -5,7 +5,7 @@ module.exports = {
         .setName('stop')
         .setDescription('Stop the Minecraft server'),
     async execute(interaction, client) {
-        exec('sudo systemctl stop minecraft', (error, stdout, stderr) => {
+        exec('sudo systemctl stop craftoria.service', (error, stdout, stderr) => {
             if (error) {
                 console.error(`Error stopping server: ${error.message}`);
                 interaction.reply('Failed to stop the server.');
