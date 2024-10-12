@@ -3,10 +3,7 @@ const { SlashCommandBuilder, ChannelType, PermissionFlagsBits, Interaction } = r
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('clear')
-        .setNameLocalizations({
-            vi: 'xóa_tin_nhắn'
-        })
+        .setName('clear_messages')
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
         .setDescription('delete messages by number in 1 channel or 1 user')
         .addChannelOption(option =>
